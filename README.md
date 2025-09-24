@@ -1,72 +1,81 @@
-# NatWest Hack4aCause Hackathon
-
-![badge-labs](https://user-images.githubusercontent.com/327285/230928932-7c75f8ed-e57b-41db-9fb7-a292a13a1e58.svg)
-
-This repository was forked from [finos-labs/learnaix-h-2025](https://github.com/finos-labs/learnaix-h-2025).
-
-Please refer to the [HACK4ACAUSE-TEMPLATE_README.md](./HACK4ACAUSE-TEMPLATE_README.md) for complete submission instructions and project documentation requirements.
+ 
+# 📘 EduMate – AI-Powered Paper2Digital Plugin  
+*NatWest Hack4aCause 2025 – ![badge-labs](https://user-images.githubusercontent.com/327285/230928932-7c75f8ed-e57b-41db-9fb7-a292a13a1e58.svg)*  
 
 ---
 
-&nbsp;
+## 🎯 Problem Statement
+The modern educational system is heavily burdened by inefficiencies in **paper-based learning and assessment**.  
 
-Join us in a transformative AI hackathon focused on driving social impact in education and
-employability. Let’s work together to add the next game changer feature on to Snowflake
-LearnAIx platform, the AI-assisted, open-source learning system that you all will be helping
-build via this hackathon.
+### 1. Traditional Assessment Limitations  
+- ⏳ **Time-Intensive Grading**: Educators spend hours marking assignments, reducing time for teaching.  
+- ⚖️ **Scalability Issues**: Manual systems cannot handle large student populations.  
+- ⌛ **Delayed Feedback**: Students receive generic responses instead of tailored guidance.  
 
-## Purpose:
+### 2. Digital-Physical Divide  
+- 📖 **Fragmented Learning Resources**: Handwritten notes, textbooks, and digital materials remain disconnected.  
+- 🚪 **Accessibility Barriers**: Students with disabilities and remote learners struggle with paper-only methods.  
+- 🔍 **No Searchability**: Physical documents lack search and indexing capabilities.  
 
-With LearnAIx, our goal is to develop a scalable and accessible platform that can be
-leveraged by non-profits and academies alike to enhance learning experiences and open
-doors of opportunities to all learners.
+### 3. Complex Assessment Challenges  
+- 🎨 **Visual Content**: Flowcharts, equations, and technical diagrams are hard to grade manually.  
+- ⚠️ **Consistency Issues**: Human graders differ in evaluation standards.  
+- 🌍 **Language Barriers**: Multilingual classrooms add complexity to both teaching and grading.  
 
-Through your involvement in this hackathon, you will get the opportunity to socialise and
-network with like-minded enthusiasts who believe in open-source enablers for community
-benefit. You will use AI to improve learning solutions in the education sector.
+---
 
-## Objective:
+## 💡 Our Solution – EduMate (Paper2Digital)
+EduMate is an **AI-powered Moodle plugin** with a Flask backend that bridges the **paper-to-digital gap**.  
+It transforms handwritten, printed, and diagrammatic inputs into **interactive, accessible, and instantly gradable digital content**.  
 
-To create AI enabled Moodle plugins on existing LearnAIx alpha solution on Snowflake public
-platform. Shortlisted plugins will feature in the LearnAIx beta version that will be available to consume for free.
+### 🔑 How EduMate Solves the Problem
+- 📝 **Intelligent Document Conversion**  
+  - Uses **DocTR OCR + Computer Vision** to digitize handwritten notes, printed materials, and diagrams.  
 
-### Integrations & Tech stack
+- 🤖 **Automated Assessment Engine**  
+  - Provides **instant grading** of essays, equations, and technical drawings with **AI consistency**.  
 
-Plugins: Custom Moodle plugins using PHP, JavaScript, and REST APIs
-AI Integration: OpenAI APIs, LangChain, or Python-based microservices
-Hosting: Snowflake
+- 📝 **Dynamic Question Generation**  
+  - Generates quizzes and practice questions automatically from uploaded content.  
 
-## How to get started with Plugin Development
+- 🌍 **Multilingual AI Tutor**  
+  - Supports multiple languages, ensuring inclusivity for diverse student populations.  
 
-- Open the provided repo
-- Navigate to `assets` folder
-- ### Step 1: Choose your runtime
+- 💬 **Interactive Chatbot**  
+  - Built-in learning assistant that explains concepts and provides feedback inside Moodle.  
 
-#### You can choose to run it in one of two ways:
+---
 
-##### Option 1: Run Plugin on Snowflake
+## 🚀 Benefits
 
-- No need to install Moodle
-- you can run the plugin directly inside your Snowflake environment.
-- _Note:_ If you only want to use Snowflake, you can _skip the local setup steps_ below.
+### 🎓 For Educators  
+- ⏱️ Reduce grading time by up to **80%**  
+- 📊 Eliminate bias and human error  
+- 🧑‍🏫 Focus on personalized instruction  
 
-##### Option 2: Run Plugin Locally with Moodle
+### 👩‍🎓 For Students  
+- ⚡ **Instant feedback** on submissions  
+- 📚 Access to **searchable, digital study resources**  
+- 🌍 Learn in **multiple languages**  
+- 🤖 Get 24/7 **AI tutoring**  
 
-- Install Moodle on your local machine.
-- Follow the setup guide for your OS:
-  - [Windows Guide](./example/moodle-local-setup/setup-Windows.md)
-  - [macOS/iOS Guide](./example/moodle-local-setup/setup-MacOS.md)
-- Complete the setup steps as per the guide.
+### 🏫 For Institutions  
+- 💰 Cut down operational costs from manual grading  
+- 📈 Scale assessments without extra staff  
+- 🏫 Stay ahead with modern **AI-driven learning systems**  
 
-- ### Step 2: Create Your Plugin
-  Once you’ve decided where to run the plugin (Snowflake or Moodle), the next step is to _create your plugin_.
+---
 
-We have provided _different plugin templates_ inside the repository:
+## 🛠️ Tech Stack
+- **AI & Processing:** DocTR, Google Gemini 2 Flash, HuggingFace Transformers, OpenCV  
+- **Backend:** Python, Flask  
+- **Plugin:** PHP (Moodle API), JavaScript  
+- **Hosting:** Snowflake (LearnAIx Platform)  
 
-- _With PHP support_ → See the [with php](./example/plugin-development-templates/with-php/)
-- _Without PHP support_ → See the [without php](./example/plugin-development-templates/without-php/)
+---
 
-Explore these folders and pick the template that best fits your needs.
+## 📷 Demo – Chatbot in Action
+![EduMate Chatbot](assets/chatbot.jpg)  
 
 ## License
 
