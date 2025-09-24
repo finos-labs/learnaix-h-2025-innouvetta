@@ -74,7 +74,7 @@ It transforms handwritten, printed, and diagrammatic inputs into **interactive, 
 
 ---
 ## 📷 Demo Video– Chatbot in Action
-![Watch the Video](https://www.youtube.com/watch?v=VfdJ7xlPKf4)
+[Watch the Video](https://www.youtube.com/watch?v=VfdJ7xlPKf4)
 
 ## 📷 Demo – Chatbot in Action
 ![EduMate Chatbot](assets/chatbot.jpg)  
