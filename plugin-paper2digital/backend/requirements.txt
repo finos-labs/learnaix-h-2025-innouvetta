@@ -1,0 +1,22 @@
+flask
+requests
+pydrive2
+python-dotenv
+snowflake-connector-python
+
+# OCR (docTR) and its backend
+# Choose ONE of the extra variants: python-doctr[torch] (PyTorch backend) or python-doctr[tensorflow]
+python-doctr[torch]
+torch
+torchvision
+torchaudio
+
+# Image / PDF processing helpers frequently used by docTR
+Pillow
+opencv-python
+pdf2image
+PyPDF2
+pyyaml
+rapidfuzz
+
+# (Optional) If you face issues with GPU, you can uninstall torch above and install a CUDA specific build separately.

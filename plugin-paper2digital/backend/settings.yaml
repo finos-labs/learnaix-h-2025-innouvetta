@@ -1,0 +1,4 @@
+client_config_backend: service
+service_config:
+  client_json_file_path: gemini_api.json
+save_credentials: False
