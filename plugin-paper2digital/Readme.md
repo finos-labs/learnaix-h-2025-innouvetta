@@ -155,7 +155,6 @@ Backend API endpoints are prefixed with `/api`:
 
 ## Database Integration
 For detailed instructions on setting up the Snowflake database, refer to the [Database Setup README](Database_README.md).
-```
 
 ---
 
