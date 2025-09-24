@@ -154,15 +154,7 @@ Backend API endpoints are prefixed with `/api`:
 ---
 
 ## Database Integration
-Snowflake is used for storing and retrieving digital content. Connection is handled via `backend/services/snowflake_service.py`.
-
-Example:
-```python
-from services.snowflake_service import SnowflakeService
-
-sf = SnowflakeService()
-data = sf.execute_query("SELECT * FROM my_table LIMIT 10")
-print(data)
+For detailed instructions on setting up the Snowflake database, refer to the [Database Setup README](Database_README.md).
 ```
 
 ---
