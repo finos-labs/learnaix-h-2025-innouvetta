@@ -144,11 +144,11 @@ http://localhost:5000
 ## API Endpoints
 Backend API endpoints are prefixed with `/api`:
 
-| Method | Endpoint           | Description                            |
-|--------|------------------|----------------------------------------|
+| Method | Endpoint          | Description                            |
+|--------|-------------------|----------------------------------------|
 | GET    | /api/health       | Checks backend health                  |
-| POST   | /api/query        | Accepts queries and fetches data      |
-| GET    | /api/data/<table> | Fetch data from specified table       |
+| POST   | /api/query        | Accepts queries and fetches data       |
+| GET    | /api/data/<table> | Fetch data from specified table        |
 | POST   | /api/chat         | Chatbot interaction endpoint           |
 
 ---
