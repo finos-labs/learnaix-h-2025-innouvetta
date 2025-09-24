@@ -151,34 +151,3 @@ Backend API endpoints are prefixed with `/api`:
 | GET    | /api/data/<table> | Fetch data from specified table        |
 | POST   | /api/chat         | Chatbot interaction endpoint           |
 
----
-
-## Database Integration
-Snowflake is used for storing and retrieving digital content. Connection is handled via `backend/services/snowflake_service.py`.
-
-Example:
-```python
-from services.snowflake_service import SnowflakeService
-
-sf = SnowflakeService()
-data = sf.execute_query("SELECT * FROM my_table LIMIT 10")
-print(data)
-```
-
----
-
-## Testing
-- Test backend endpoints using **Postman** or **cURL**:
-```bash
-curl -X GET http://localhost:5000/api/health
-```
-
-- Test the plugin through the Moodle interface.
-
----
-
-## Troubleshooting
-- **Backend connection errors:** Check Snowflake credentials, network access, and environment variables.  
-- **Flask server not starting:** Ensure the virtual environment is active and `FLASK_APP` is set.  
-- **Moodle plugin not showing:** Verify folder structure and correct placement in Moodle’s local plugins directory.
-
