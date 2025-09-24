@@ -73,6 +73,8 @@ It transforms handwritten, printed, and diagrammatic inputs into **interactive, 
 - **Hosting:** Snowflake (LearnAIx Platform)  
 
 ---
+## 📷 Demo Video– Chatbot in Action
+![Watch the Video](https://www.youtube.com/watch?v=VfdJ7xlPKf4)
 
 ## 📷 Demo – Chatbot in Action
 ![EduMate Chatbot](assets/chatbot.jpg)  
