@@ -1,0 +1,516 @@
+/* Moodle-inspired Light Theme CSS */
+/* Color palette inspired by Moodle */
+:root {
+    --moodle-primary: #0f6cbf;
+    --moodle-primary-light: #3887d8;
+    --moodle-primary-dark: #0a5494;
+    --moodle-secondary: #17a2b8;
+    --moodle-success: #28a745;
+    --moodle-warning: #ffc107;
+    --moodle-danger: #dc3545;
+    --moodle-light: #f8f9fa;
+    --moodle-white: #ffffff;
+    --moodle-gray-100: #f8f9fa;
+    --moodle-gray-200: #e9ecef;
+    --moodle-gray-300: #dee2e6;
+    --moodle-gray-400: #ced4da;
+    --moodle-gray-500: #6c757d;
+    --moodle-gray-600: #495057;
+    --moodle-gray-700: #343a40;
+    --moodle-gray-800: #212529;
+    --moodle-border-radius: 6px;
+    --moodle-border-radius-lg: 8px;
+    --moodle-shadow-sm: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.075);
+    --moodle-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15);
+    --moodle-shadow-lg: 0 1rem 3rem rgba(0, 0, 0, 0.175);
+}
+
+/* Reset and base styles */
+* {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif;
+    line-height: 1.5;
+    color: var(--moodle-gray-700);
+    background-color: var(--moodle-gray-100);
+}
+
+#chatbot-container {
+    max-width: 900px;
+    margin: 20px auto;
+    border: 1px solid var(--moodle-gray-300);
+    border-radius: var(--moodle-border-radius-lg);
+    overflow: hidden;
+    box-shadow: var(--moodle-shadow);
+    background: var(--moodle-white);
+    font-family: inherit;
+}
+
+#chatbot-header {
+    background: var(--moodle-primary);
+    color: var(--moodle-white);
+    padding: 16px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 2px solid var(--moodle-primary-dark);
+}
+
+#chatbot-header h3 {
+    margin: 0;
+    font-size: 1.25rem;
+    font-weight: 500;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+#chatbot-header h3::before {
+    content: "💬";
+    font-size: 1.1em;
+}
+
+#chatbot-controls {
+    display: flex;
+    gap: 12px;
+    align-items: center;
+}
+
+#language-selector {
+    padding: 6px 12px;
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    border-radius: var(--moodle-border-radius);
+    background: rgba(255, 255, 255, 0.1);
+    color: var(--moodle-white);
+    font-size: 0.875rem;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+}
+
+#language-selector:hover {
+    background: rgba(255, 255, 255, 0.2);
+}
+
+#language-selector option {
+    background: var(--moodle-white);
+    color: var(--moodle-gray-700);
+}
+
+#reset-chat {
+    padding: 6px 12px;
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    background: transparent;
+    color: var(--moodle-white);
+    border-radius: var(--moodle-border-radius);
+    font-size: 0.875rem;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    font-weight: 400;
+}
+
+#reset-chat:hover {
+    background: rgba(255, 255, 255, 0.15);
+    border-color: rgba(255, 255, 255, 0.5);
+}
+
+#chat-messages {
+    height: 500px;
+    overflow-y: auto;
+    padding: 20px;
+    background: var(--moodle-white);
+    scroll-behavior: smooth;
+}
+
+.message {
+    margin-bottom: 20px;
+    display: flex;
+    align-items: flex-start;
+    animation: messageSlide 0.3s ease-out;
+}
+
+@keyframes messageSlide {
+    from { 
+        opacity: 0; 
+        transform: translateY(15px);
+    }
+    to { 
+        opacity: 1; 
+        transform: translateY(0);
+    }
+}
+
+.message.user {
+    justify-content: flex-end;
+}
+
+.message.bot {
+    justify-content: flex-start;
+}
+
+.message-content {
+    max-width: 75%;
+    padding: 12px 16px;
+    border-radius: var(--moodle-border-radius-lg);
+    word-wrap: break-word;
+    position: relative;
+    line-height: 1.4;
+    font-size: 0.95rem;
+}
+
+.message.user .message-content {
+    background: var(--moodle-primary);
+    color: var(--moodle-white);
+    border-bottom-right-radius: 4px;
+    box-shadow: var(--moodle-shadow-sm);
+}
+
+.message.bot .message-content {
+    background: var(--moodle-gray-100);
+    color: var(--moodle-gray-700);
+    border: 1px solid var(--moodle-gray-300);
+    border-bottom-left-radius: 4px;
+    box-shadow: var(--moodle-shadow-sm);
+}
+
+.message-avatar {
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 16px;
+    margin: 0 10px;
+    flex-shrink: 0;
+    font-weight: 500;
+}
+
+.message.user .message-avatar {
+    background: var(--moodle-primary-light);
+    color: var(--moodle-white);
+    order: 2;
+    border: 2px solid var(--moodle-white);
+    box-shadow: var(--moodle-shadow-sm);
+}
+
+.message.bot .message-avatar {
+    background: var(--moodle-secondary);
+    color: var(--moodle-white);
+    border: 2px solid var(--moodle-white);
+    box-shadow: var(--moodle-shadow-sm);
+}
+
+#chat-input-container {
+    display: flex;
+    padding: 16px 20px;
+    background: var(--moodle-white);
+    border-top: 1px solid var(--moodle-gray-300);
+    align-items: flex-end;
+    gap: 12px;
+}
+
+#file-upload-container {
+    display: flex;
+    align-items: center;
+}
+
+#file-upload-btn {
+    width: 42px;
+    height: 42px;
+    border: 1px solid var(--moodle-gray-300);
+    background: var(--moodle-white);
+    border-radius: var(--moodle-border-radius);
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 18px;
+    transition: all 0.2s ease;
+    color: var(--moodle-gray-500);
+}
+
+#file-upload-btn:hover {
+    background: var(--moodle-gray-100);
+    border-color: var(--moodle-gray-400);
+    color: var(--moodle-primary);
+}
+
+#message-input-container {
+    flex: 1;
+    display: flex;
+    align-items: flex-end;
+    gap: 12px;
+}
+
+#message-input {
+    flex: 1;
+    min-height: 42px;
+    max-height: 120px;
+    padding: 12px 16px;
+    border: 1px solid var(--moodle-gray-300);
+    border-radius: var(--moodle-border-radius-lg);
+    resize: none;
+    font-family: inherit;
+    font-size: 0.95rem;
+    outline: none;
+    transition: all 0.2s ease;
+    background: var(--moodle-white);
+    color: var(--moodle-gray-700);
+}
+
+#message-input:focus {
+    border-color: var(--moodle-primary);
+    box-shadow: 0 0 0 2px rgba(15, 108, 191, 0.1);
+}
+
+#message-input::placeholder {
+    color: var(--moodle-gray-500);
+}
+
+#send-btn {
+    width: 42px;
+    height: 42px;
+    border: none;
+    background: var(--moodle-primary);
+    color: var(--moodle-white);
+    border-radius: var(--moodle-border-radius-lg);
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 16px;
+    transition: all 0.2s ease;
+    box-shadow: var(--moodle-shadow-sm);
+}
+
+#send-btn:hover {
+    background: var(--moodle-primary-dark);
+    box-shadow: var(--moodle-shadow);
+}
+
+#send-btn:active {
+    transform: translateY(1px);
+}
+
+#send-btn:disabled {
+    background: var(--moodle-gray-400);
+    cursor: not-allowed;
+    transform: none;
+}
+
+#typing-indicator {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 12px 20px;
+    background: var(--moodle-gray-100);
+    border-top: 1px solid var(--moodle-gray-300);
+    color: var(--moodle-gray-600);
+    font-style: italic;
+    font-size: 0.9rem;
+}
+
+.typing-dots {
+    display: flex;
+    gap: 4px;
+    align-items: center;
+}
+
+.typing-dots span {
+    width: 6px;
+    height: 6px;
+    background: var(--moodle-primary);
+    border-radius: 50%;
+    animation: typingAnimation 1.4s infinite ease-in-out;
+}
+
+.typing-dots span:nth-child(1) { animation-delay: -0.32s; }
+.typing-dots span:nth-child(2) { animation-delay: -0.16s; }
+.typing-dots span:nth-child(3) { animation-delay: 0s; }
+
+@keyframes typingAnimation {
+    0%, 80%, 100% { 
+        transform: scale(0.8);
+        opacity: 0.5;
+    }
+    40% { 
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+/* File upload styles */
+.file-info {
+    background: rgba(15, 108, 191, 0.05);
+    border: 1px solid rgba(15, 108, 191, 0.2);
+    border-radius: var(--moodle-border-radius);
+    padding: 8px 12px;
+    margin: 4px 0;
+    font-size: 0.875rem;
+    color: var(--moodle-primary);
+    display: flex;
+    align-items: center;
+    gap: 6px;
+}
+
+.file-info::before {
+    content: "📎";
+    font-size: 0.9em;
+}
+
+/* Enhanced message formatting */
+.message-content strong {
+    font-weight: 600;
+}
+
+.message-content em {
+    font-style: italic;
+    opacity: 0.9;
+}
+
+.message-content br {
+    line-height: 1.8;
+}
+
+/* Scrollbar styling */
+#chat-messages::-webkit-scrollbar {
+    width: 6px;
+}
+
+#chat-messages::-webkit-scrollbar-track {
+    background: var(--moodle-gray-200);
+    border-radius: 3px;
+}
+
+#chat-messages::-webkit-scrollbar-thumb {
+    background: var(--moodle-gray-400);
+    border-radius: 3px;
+}
+
+#chat-messages::-webkit-scrollbar-thumb:hover {
+    background: var(--moodle-gray-500);
+}
+
+/* Mobile responsiveness */
+@media (max-width: 768px) {
+    #chatbot-container {
+        margin: 10px;
+        border-radius: var(--moodle-border-radius);
+        max-width: calc(100vw - 20px);
+    }
+    
+    #chatbot-header {
+        flex-direction: column;
+        gap: 12px;
+        align-items: stretch;
+        padding: 14px 16px;
+    }
+    
+    #chatbot-controls {
+        justify-content: space-between;
+    }
+    
+    #chat-messages {
+        height: 400px;
+        padding: 16px;
+    }
+    
+    .message-content {
+        max-width: 85%;
+        font-size: 0.9rem;
+        padding: 10px 14px;
+    }
+    
+    .message-avatar {
+        width: 32px;
+        height: 32px;
+        margin: 0 8px;
+        font-size: 14px;
+    }
+    
+    #chat-input-container {
+        padding: 12px 16px;
+        gap: 10px;
+    }
+    
+    #message-input {
+        font-size: 16px; /* Prevents zoom on iOS */
+        min-height: 40px;
+        padding: 10px 14px;
+    }
+    
+    #send-btn, #file-upload-btn {
+        width: 40px;
+        height: 40px;
+    }
+}
+
+@media (max-width: 480px) {
+    #chatbot-container {
+        margin: 5px;
+        border-radius: var(--moodle-border-radius);
+    }
+    
+    #chatbot-header h3 {
+        font-size: 1.1rem;
+    }
+    
+    #chat-messages {
+        height: 350px;
+        padding: 12px;
+    }
+    
+    .message {
+        margin-bottom: 16px;
+    }
+    
+    .message-content {
+        max-width: 90%;
+        padding: 8px 12px;
+    }
+}
+
+/* Focus styles for accessibility */
+#language-selector:focus,
+#reset-chat:focus,
+#message-input:focus,
+#send-btn:focus,
+#file-upload-btn:focus {
+    outline: 2px solid var(--moodle-primary);
+    outline-offset: 2px;
+}
+
+/* High contrast mode support */
+@media (prefers-contrast: high) {
+    :root {
+        --moodle-gray-300: #999999;
+        --moodle-gray-400: #767676;
+        --moodle-gray-500: #545454;
+    }
+    
+    .message.bot .message-content {
+        border-width: 2px;
+    }
+    
+    #message-input {
+        border-width: 2px;
+    }
+}
+
+/* Reduced motion support */
+@media (prefers-reduced-motion: reduce) {
+    .message {
+        animation: none;
+    }
+    
+    .typing-dots span {
+        animation: none;
+        opacity: 0.7;
+    }
+    
+    * {
+        transition: none !important;
+    }
+}
