@@ -44,6 +44,18 @@ $PAGE->requires->js_init_call('M.local_chatbot.init', array($js_config));
 echo $OUTPUT->header();
 ?>
 
+<!-- Navigation buttons -->
+<div class="chatbot-navigation">
+    <a href="<?php echo new moodle_url('/local/chatbot/index.php'); ?>" 
+       class="nav-button <?php echo basename($_SERVER['PHP_SELF']) == 'index.php' ? 'active' : ''; ?>">
+        💬 Chat Assistant
+    </a>
+    <a href="<?php echo new moodle_url('/local/chatbot/assignments.php'); ?>" 
+       class="nav-button <?php echo basename($_SERVER['PHP_SELF']) == 'assignments.php' ? 'active' : ''; ?>">
+        📝 Assignments Due
+    </a>
+</div>
+
 <div id="chatbot-container">
     <div id="chatbot-header">
         <h3><?php echo get_string('chatbot_title', 'local_chatbot'); ?></h3>
@@ -57,9 +69,9 @@ echo $OUTPUT->header();
             <button id="reset-chat" class="btn btn-secondary"><?php echo get_string('reset_chat', 'local_chatbot'); ?></button>
         </div>
     </div>
-    
+
     <div id="chat-messages"></div>
-    
+
     <div id="chat-input-container">
         <?php if ($enable_file_upload): ?>
         <div id="file-upload-container">
@@ -69,13 +81,13 @@ echo $OUTPUT->header();
             </button>
         </div>
         <?php endif; ?>
-        
+
         <div id="message-input-container">
             <textarea id="message-input" placeholder="<?php echo get_string('type_message', 'local_chatbot'); ?>" rows="1"></textarea>
             <button id="send-btn" class="btn btn-primary"><?php echo get_string('send', 'local_chatbot'); ?></button>
         </div>
     </div>
-    
+
     <div id="typing-indicator" style="display: none;">
         <div class="typing-dots">
             <span></span>
@@ -86,5 +98,4 @@ echo $OUTPUT->header();
     </div>
 </div>
 
-<?php
-echo $OUTPUT->footer();
+<?php echo $OUTPUT->footer(); ?>
